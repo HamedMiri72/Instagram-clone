@@ -124,7 +124,10 @@ export default function Header() {
                     <div className='flex flex-col justify-center items-center h-[100%]'>
 
                         {selectedFile ? (
-                            <img onClick={()=> setSelectedFile(null)} src={imageFileUrl} alt='selected file' className='w-full max-h-[250px] object-fit cursor-pointer'/>
+                            <img onClick={()=> setSelectedFile(null)}
+                             src={imageFileUrl}
+                            alt='selected file' 
+                            className={`w-full max-h-[250px] object-fit cursor-pointer ${imageFileUploading ? 'animate-pulse' : ''}`}/>
                         ):(
                         <HiCamera onClick={()=>filePickerRef.current.click()} className='text-5xl text-gray-400 cursor-pointer'/>
                         )}
